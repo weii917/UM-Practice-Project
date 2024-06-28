@@ -13,11 +13,23 @@
     <a href="accounts/new"><button>新增</button></a>
 
     <?php foreach ($accounts as $account) : ?>
-        <a href="accounts/show?id=<?= $account["id"] ?>">
-            <h2><?= htmlspecialchars($account["name"]) ?> Account</h2>
-        </a>
+        <table>
+            <tr>
+                <td>
+                    <a href="accounts/show?id=<?= $account["id"] ?>">
+                        <h2><?= htmlspecialchars($account["account"]) ?> Account</h2>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>姓名: <?= htmlspecialchars($account["account"]) ?></p>
+                </td>
+            </tr>
+        </table>
 
-        <p><?= htmlspecialchars($account["account"]) ?></p>
+
+
     <?php endforeach; ?>
 </body>
 

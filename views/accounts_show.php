@@ -11,7 +11,7 @@
 
 <body>
     <h1><?= $account["name"] ?> Account</h1>
-    <a href="/"><button>取消</button></a>
+    <a href="/"><button>首頁</button></a>
     <table>
         <tr>
             <td>姓名</td>
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <td>帳號</td>
-            <td><?= $account["name"] ?></td>
+            <td><?= $account["account"] ?></td>
         </tr>
         <tr>
             <td>性別</td>
@@ -34,8 +34,8 @@
             <td><?= $account["telephone"] ?></td>
         </tr>
     </table>
-    <button>編輯</button>
-    <button>刪除</button>
+    <a href="/accounts/edit?id=<?= $account["id"] ?>"><button>編輯</button></a>
+
 
 
 </body>

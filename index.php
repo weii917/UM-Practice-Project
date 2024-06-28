@@ -3,6 +3,9 @@
 require "src/router.php";
 
 $router = new Router;
+$router->add("/accounts/delete", ["controller" => "accounts", "action" => "delete"]);
+$router->add("/accounts/update", ["controller" => "accounts", "action" => "update"]);
+$router->add("/accounts/edit", ["controller" => "accounts", "action" => "edit"]);
 $router->add("/accounts/create", ["controller" => "accounts", "action" => "create"]);
 $router->add("/accounts/new", ["controller" => "accounts", "action" => "new"]);
 $router->add("/accounts/show", ["controller" => "accounts", "action" => "show"]);

@@ -56,5 +56,50 @@ class Account
         return $row->execute();
     }
 
-   
+    public function update(string $id, array $data): bool
+    {
+        $pdo = $this->getDatabase()->getConnector();
+
+        $sql = "UPDATE member";
+
+        unset($data["id"]);
+        $assignments = array_keys($data);
+
+        array_walk($assignments, function (&$value) {
+            $value = "$value = ?";
+        });
+
+        $sql .= " SET " . implode(", ", $assignments);
+
+        $sql .= " WHERE id = ?";
+
+        $row = $pdo->prepare($sql);
+
+        $i = 1;
+
+        foreach ($data as $value) {
+            $type = match (gettype($value)) {
+                "boolean" => PDO::PARAM_BOOL,
+                "integer" => PDO::PARAM_INT,
+                "NULL" => PDO::PARAM_NULL,
+                default => PDO::PARAM_STR
+            };
+            $row->bindValue($i++, $value, $type);
+        }
+
+        $row->bindValue($i, $id, PDO::PARAM_INT);
+        return $row->execute();
+    }
+
+    public function delete(string $id): bool
+    {
+        $pdo = $this->getDatabase()->getConnector();
+
+        $sql = "DELETE FROM member
+                WHERE id = :id";
+        $row = $pdo->prepare($sql);
+        $row->bindValue(":id", $id, PDO::PARAM_INT);
+
+        return $row->execute();
+    }
 }

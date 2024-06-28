@@ -17,8 +17,8 @@ class Accounts
     {
         require "src/models/account.php";
         $model = new Account;
-        $id = $_GET['id'];
-        $account = $model->find($id);
+        $accountId = $_GET['id'];
+        $account = $model->find($accountId);
 
         require "views/accounts_show.php";
     }
@@ -43,6 +43,44 @@ class Accounts
         ];
         // echo $model->insert($data);
         if ($model->insert($data)) {
+            header("Location:/");
+            exit;
+        }
+    }
+
+    public function edit()
+    {
+        require "src/models/account.php";
+        $model = new Account;
+        $accountId = $_GET['id'];
+        $account = $model->find($accountId);
+        require "views/accounts_edit.php";
+    }
+    public function update()
+    {
+        require "src/models/account.php";
+        $model = new Account;
+        $account = $model->find($_POST["id"]);
+        $account["name"] = $_POST["name"];
+        $account["account"] = $_POST["account"];
+        $account["password"] = $_POST["password"];
+        $account["telephone"] = $_POST["telephone"];
+        $account["sex"] = $_POST["sex"];
+        $account["address"] = $_POST["address"];
+        $account["email"] = $_POST["email"];
+        if ($model->update($account["id"], $account)) {
+            header("Location:/accounts/show?id={$account["id"]}");
+            exit;
+        }
+    }
+
+    public function delete()
+    {
+        require "src/models/account.php";
+        $model = new Account;
+        $accountId = $_GET['id'];
+
+        if ($model->delete($accountId)) {
             header("Location:/");
             exit;
         }

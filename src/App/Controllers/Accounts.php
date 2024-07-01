@@ -8,7 +8,7 @@ class Accounts
 {
     public function index()
     {
-       
+
         $model = new Account;
 
         $accounts = $model->getData();
@@ -19,7 +19,7 @@ class Accounts
 
     public function show()
     {
-       
+
         $model = new Account;
         $accountId = $_GET['id'];
         $account = $model->find($accountId);
@@ -34,7 +34,7 @@ class Accounts
 
     public function create()
     {
-        require "src/models/account.php";
+        // require "src/models/account.php";
         $model = new Account;
         $data = [
             "name" => $_POST["name"],
@@ -47,14 +47,14 @@ class Accounts
         ];
         // echo $model->insert($data);
         if ($model->insert($data)) {
-            header("Location:/");
+            header("Location:/accounts/index");
             exit;
         }
     }
 
     public function edit()
     {
-       
+
         $model = new Account;
         $accountId = $_GET['id'];
         $account = $model->find($accountId);
@@ -62,7 +62,7 @@ class Accounts
     }
     public function update()
     {
-       
+
         $model = new Account;
         $account = $model->find($_POST["id"]);
         $account["name"] = $_POST["name"];
@@ -80,12 +80,12 @@ class Accounts
 
     public function delete()
     {
-       
+
         $model = new Account;
         $accountId = $_GET['id'];
 
         if ($model->delete($accountId)) {
-            header("Location:/");
+            header("Location:/accounts/index");
             exit;
         }
     }

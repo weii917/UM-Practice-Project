@@ -20,7 +20,7 @@
 
 <body>
     <h1>會員修改</h1>
-    <a href="/"><button>返回</button></a>
+    <a href="/accounts/index"><button>返回</button></a>
 
     <form action="/accounts/update" method="post">
         <div class="row">

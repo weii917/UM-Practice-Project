@@ -10,7 +10,7 @@
 
 <body>
     <h1>會員系統</h1>
-    <a href="accounts/new"><button>新增</button></a>
+    <a href="/accounts/new"><button>新增</button></a>
     <table>
         <tr>
             <td>姓名</td>
@@ -38,7 +38,7 @@
                     <p><?= htmlspecialchars($account["telephone"]) ?></p>
                 </td>
                 <td>
-                    <a href="accounts/show?id=<?= $account["id"] ?>">
+                    <a href="/accounts/show?id=<?= $account["id"] ?>">
                         <p>編輯</p>
                     </a>
                 </td>

@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <h1><?= $account["name"] ?> Account</h1>
-    <a href="/"><button>首頁</button></a>
+    <h1><?= $account["name"] ?> 的詳細資料</h1>
+    <a href="/accounts/index"><button>首頁</button></a>
     <table>
         <tr>
             <td>姓名</td>

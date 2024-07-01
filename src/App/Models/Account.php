@@ -1,5 +1,11 @@
 <?php
-require "src/Connector.php";
+
+namespace App\Models;
+
+use App\Connector;
+use PDO;
+
+// require "App/Connector.php";
 class Account
 {
     protected function getDatabase()

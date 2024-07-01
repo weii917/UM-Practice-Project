@@ -1,10 +1,14 @@
 <?php
 
+namespace App\Controllers;
+
+use App\Models\Account;
+
 class Accounts
 {
     public function index()
     {
-        require "src/models/account.php";
+       
         $model = new Account;
 
         $accounts = $model->getData();
@@ -15,7 +19,7 @@ class Accounts
 
     public function show()
     {
-        require "src/models/account.php";
+       
         $model = new Account;
         $accountId = $_GET['id'];
         $account = $model->find($accountId);
@@ -50,7 +54,7 @@ class Accounts
 
     public function edit()
     {
-        require "src/models/account.php";
+       
         $model = new Account;
         $accountId = $_GET['id'];
         $account = $model->find($accountId);
@@ -58,7 +62,7 @@ class Accounts
     }
     public function update()
     {
-        require "src/models/account.php";
+       
         $model = new Account;
         $account = $model->find($_POST["id"]);
         $account["name"] = $_POST["name"];
@@ -76,7 +80,7 @@ class Accounts
 
     public function delete()
     {
-        require "src/models/account.php";
+       
         $model = new Account;
         $accountId = $_GET['id'];
 

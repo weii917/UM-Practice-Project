@@ -35,6 +35,18 @@ class Account
         return $row->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function login(string $account): array|bool
+    {
+        $pdo = $this->getDatabase()->getConnector();
+        $sql = "SELECT * 
+                FROM member
+                WHERE account = :account";
+        $row = $pdo->prepare($sql);
+        $row->bindValue(":account", $account, PDO::PARAM_STR);
+        $row->execute();
+
+        return $row->fetch(PDO::FETCH_ASSOC);
+    }
     public function insert(array $data): bool
     {
 

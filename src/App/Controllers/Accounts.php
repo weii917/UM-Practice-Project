@@ -4,15 +4,17 @@ namespace App\Controllers;
 
 use App\Models\Account;
 
+session_start();
+
 class Accounts
 {
+
     public function index()
     {
 
+
         $model = new Account;
-
         $accounts = $model->getData();
-
 
         require "views/accounts_index.php";
     }

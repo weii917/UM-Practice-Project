@@ -20,7 +20,7 @@ $router->add("/{controller}/{action}");
 // $router->add("/accounts/create", ["controller" => "accounts", "action" => "create"]);
 // $router->add("/accounts/new", ["controller" => "accounts", "action" => "new"]);
 // $router->add("/accounts/show", ["controller" => "accounts", "action" => "show"]);
-$router->add("/", ["controller" => "accounts", "action" => "index"]);
+$router->add("/", ["controller" => "admin", "action" => "index"]);
 $router->add("/accounts", ["controller" => "accounts", "action" => "index"]);
 // $router->add("/accounts/index", ["controller" => "accounts", "action" => "index"]);
 $router->add("/admin/index", ["controller" => "admin", "action" => "index"]);

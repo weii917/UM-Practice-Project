@@ -1,0 +1,11 @@
+{
+    "name": "user/um-practice-project",
+    "description": "um-practice-project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/App/",
+            "Framework\\": "src/Framework/"
+        }
+    },
+    "require": {}
+}

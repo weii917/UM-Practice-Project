@@ -16,7 +16,7 @@ class Admin
     public function login()
     {
 
-        $adminAcc = $_POST['account'];
+        $adminAcc = "admin";
         $adminPw = $_POST['password'];
 
         $model = new Account;

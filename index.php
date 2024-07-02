@@ -1,14 +1,14 @@
 <?php
 
 // require "src/router.php";
-
+require 'vendor/autoload.php';
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-spl_autoload_register(function (string $class_name) {
+// spl_autoload_register(function (string $class_name) {
 
-    require "src/" . str_replace("\\", "/", $class_name) . ".php";
-});
+//     require "src/" . str_replace("\\", "/", $class_name) . ".php";
+// });
 
 $router = new Framework\Router;
 

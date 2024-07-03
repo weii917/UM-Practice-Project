@@ -47,7 +47,7 @@ class Accounts
             "address" => $_POST["address"],
             "email" => $_POST["email"],
         ];
-        // echo $model->insert($data);
+     
         if ($model->insert($data)) {
             header("Location:/accounts/index");
             exit;

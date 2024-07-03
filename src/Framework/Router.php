@@ -42,7 +42,7 @@ class Router
     private function getPatternFromRoutePath(string $route_path): string
     {
 
-        // 移除
+       
         $route_path = trim($route_path, "/");
 
         $segments = explode("/", $route_path);

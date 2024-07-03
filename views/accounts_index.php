@@ -61,25 +61,7 @@
     ?>
 
 
-    <!-- <?php foreach ($accounts as $account) : ?>
-        <table>
-            <tr>
-                <td>
-                    <a href="accounts/show?id=<?= $account["id"] ?>">
-                        <h2><?= htmlspecialchars($account["account"]) ?> Account</h2>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>姓名: <?= htmlspecialchars($account["account"]) ?></p>
-                </td>
-            </tr>
-        </table>
-
-
-
-    <?php endforeach; ?> -->
+  
 </body>
 
 </html>
